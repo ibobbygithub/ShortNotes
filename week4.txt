@@ -1,0 +1,487 @@
+/* import React, { Component } from 'react'
+import { Text, StyleSheet, View } from 'react-native'
+
+export default class App extends Component {
+  render() {
+    return (
+      <View>
+        <Text> 123 </Text>
+      </View>
+    )
+  }
+}
+
+const styles = StyleSheet.create({}) */
+
+/* import React from 'react'
+import {Text} from 'react-native'
+
+  const getFullName = (firstName, secondName, thridName)=>{
+    return firstName + " " + secondName + " " + thridName
+  }
+  const cat = ()=>{
+  return(
+    <Text>fuck you {getFullName("Rum","tum","Tugger")}</Text>
+  )
+} */
+
+//export default cat
+
+/* import React from 'react';
+import {Text,TextInput,View} from 'react-native';
+
+const App = () => {
+  return (
+    <View>
+      <Text>Hello, Iam...</Text>
+      <TextInput
+        style = {{
+            heigh:40,
+            borderColor:'gray',
+            borderWidth:1
+          }}
+        />
+    </View>
+  );
+};
+
+export default App;  */
+
+/* import React from 'react';
+import { Text,TextInput, View } from 'react-native';
+
+const Cat = () => {
+  return (
+    <View>
+        <Text>i am also cat!</Text>
+    </View>
+  );
+};
+
+export default Cat */
+
+/* import React from 'react';
+import {Text,SafeAreaView,View} from 'react-native';
+
+const App = () => {
+  return(
+  <SafeAreaView>
+    <View>
+      <Text>All the very best</Text>
+      <Text>This is your first App</Text>
+      <Text>Enjoy react native coding</Text>
+    </View>
+  </SafeAreaView>
+  );
+};
+
+export default App; */
+
+/* import React, { Component } from 'react'
+import { View, Text, SafeAreaView,StyleSheet } from 'react-native'
+
+export default class App extends Component {
+  render() {
+    return (
+    <SafeAreaView>
+      <View>
+        <Text>All the very best</Text>
+        <Text>This is your first App</Text>
+        <Text>Enjoy react native coding</Text>
+    </View>
+    </SafeAreaView>
+    )
+  }
+}
+
+const style = StyleSheet.create()
+ */
+/* import React from 'react';
+import { View, Text, SafeAreaView,StyleSheet } from 'react-native'
+
+const App = () => {
+  return (
+    <View style={styles.contrainer}>
+      <Text style={styles.title}>React Native</Text>
+    </View>
+  );
+};
+
+const styles = StyleSheet.create({
+  contrainer:{
+    flex:1,
+    padding:24,
+    backgroundColor:'#eaa',
+  },
+  title:{
+    textAlign: 'center',
+    fontSize: 20,
+    fontWeight: 'bold',
+    ckgroundColor:'#ffff',
+    borderWidth: 5,
+    padding: 8
+  }
+})
+export default App;  */
+
+/* import React, {useState} from 'react';
+import { View, Text, SafeAreaView,StyleSheet } from 'react-native'
+
+const App = () => {
+  
+    const[valx,setValx] = useState(0)
+    const[valy,setValy] = useState(1000000)
+    setInterval(()=>{
+      setValx(valx+1)
+      setValy(valy-1)
+    },1000)
+  return (
+    <SafeAreaView>
+      <View>
+      <Text>Hello I am valx. I am increasing {valx}</Text>
+      <Text>Hello I am valy. I am decreasing {valy}</Text>
+      </View>
+    </SafeAreaView>
+  )
+};
+
+export default App; */
+/*
+import React, {useState} from 'react';
+import { View, Button, Text, SafeAreaView,StyleSheet } from 'react-native'
+
+const App = () => {
+  const [count, setCount] = useState(0)
+  return (
+    <SafeAreaView style={styles.container}>
+     <View>
+        <Text>You clickd {count} times</Text>
+        <Button
+         title="Press me"
+         color="#f194ff"
+         onPress={() => setCount(count + 1)}
+        title="Click me!"
+          />
+      </View>
+    </SafeAreaView>
+  )
+};
+
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    justifyContent: 'center',
+    marginHorizontal: 16,
+  },
+  title: {
+    textAlign: 'center',
+    marginVertical: 8,
+  },
+  fixToText: {
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+  },
+  separator: {
+    marginVertical: 8,
+    borderBottomColor: '#737373',
+    borderBottomWidth: StyleSheet.hairlineWidth,
+  }
+}); 
+
+export default App; 
+*/
+/* import React, {Component} from "react"  
+import { StyleSheet, Text, View} from "react-native"
+
+//setState
+export default class App extends Component {
+  constructor(){
+    super();
+    this.state ={
+      year : 2016
+    }
+  }
+
+//setState
+updateYear(){
+  this.setState({
+    year:2020
+  })
+}//end of updateYear
+
+render() {
+  return(
+    <View>
+    <Text onPress = {()=>this.updateYear()}>
+      The year is : {this.state.year}
+    </Text>     
+    </View>
+  )
+}
+}
+
+const style = StyleSheet.create({}) */
+
+//3.StatewithOtherDataTypes
+/* import React, {Component} from "react"  
+import { StyleSheet, Text, View} from "react-native"
+
+//setState
+export default class App extends Component {
+  constructor(){
+    super();
+    this.state ={
+      year : 2016,
+      leapYear:true,
+      topics:['React Web','React Native', 'JavaScript'],
+      //Object
+      info:{
+          paperback:true,
+          length:'335 pages',
+          type:'programming'
+      }
+    }
+  }
+render(){
+  let leapyear;
+  if(this.state.leapYear){
+    leapyear = <Text>This year is a leapyear!</Text>
+  }else{
+    leapyear = <Text>This is not a leapyear!</Text>
+  }//end of if
+  return(
+    <View style = {style.container}>
+    <Text style = {style.text}>
+          year : {this.state.year}{'\n'}
+          Length : {this.state.info.length}{'\n'}
+          Type : {this.state.info.type}{'\n'}
+          {leapyear}
+    </Text>     
+    </View>
+  )// end of return
+}//end of render
+}//end of class component
+
+const style = StyleSheet.create({
+  container:{
+    flex:1,
+    alignItems:'center',
+    justifyContent:'center'
+  },
+  text:{
+    fontSize:20,
+    color:'red'
+  }
+})  */
+
+/* //4.static props
+import React, {Component} from "react"  
+import { StyleSheet, Text, View} from "react-native"
+
+//setState
+export default class App extends Component {
+render(){
+  return(
+    <View style = {style.container}>     
+      <BookDisplay book="React Native 2020"/>
+    </View>
+  )// end of return
+}//end of render
+}//end of class component
+
+class BookDisplay extends Component{
+  render(){
+    return(
+      <View>
+        <Text style = {style.text}>
+        {this.props.book} asdasd
+        </Text>
+      </View>
+    )
+  }
+}//end of class BookDisplay
+
+const style = StyleSheet.create({
+  container:{
+    flex:1,
+    alignItems:'center',
+    justifyContent:'center'
+  },
+  text:{
+    fontSize:20,
+    color:'red'
+  }
+}) 
+ */
+
+/* //5.Dynamic props
+import React, {Component} from "react"  
+import { StyleSheet, Text, View} from "react-native"
+
+//setState
+export default class App extends Component {
+render(){
+  let book = "React Native"
+  return(
+    <View style = {style.container}>     
+      <BookDisplay book={book}/>
+    </View>
+  )// end of return
+}//end of render
+}//end of class component
+
+class BookDisplay extends Component{
+  render(){
+    return(
+      <View>
+        <Text style = {style.text}>
+        {this.props.book} asdasd
+        </Text>
+      </View>
+    )
+  }
+}//end of class BookDisplay
+
+const style = StyleSheet.create({
+  container:{
+    flex:1,
+    alignItems:'center',
+    justifyContent:'center'
+  },
+  text:{
+    fontSize:20,
+    color:'red'
+  }
+}) 
+ */
+
+/* //6.Dynamic props using state
+import React, {Component} from "react"  
+import { StyleSheet, Text, View} from "react-native"
+
+//setState
+export default class App extends Component {
+  constructor(){
+    super();
+    this.state ={
+      book:'React Native 2020'
+    }
+    this.update = this.update.bind(this)
+  }
+  update(){
+    this.setState({
+      book:'Express in Action'
+    })
+  }
+render(){
+  return(
+    <View style = {style.container}> 
+      <Text>
+        <BookDisplay book={this.state.book} update={this.update} />
+      </Text>    
+    </View>
+  )// end of return
+}//end of render
+}//end of class component
+
+class BookDisplay extends Component{
+  render(){
+    return(
+      <View>
+        <Text style = {style.text} onPress = {this.props.update}>
+        {this.props.book}
+        </Text>
+      </View>
+    )
+  }
+}//end of class BookDisplay
+
+const style = StyleSheet.create({
+  container:{
+    flex:1,
+    alignItems:'center',
+    justifyContent:'center'
+  },
+  text:{
+    fontSize:20,
+    color:'red'
+  }
+})  */
+
+//8.Oassubg Arrays and Objects as props
+/*
+import React, {Component} from "react"  
+import { StyleSheet, Text, View} from "react-native"
+
+//setState
+export default class App extends Component {
+
+  constructor(){
+    super();
+    this.state ={
+      leapYear:true,
+      info :{
+        type:'programming'
+      }
+    }
+  }
+    update(){
+    this.setState({
+      book:'Express in Action'
+    })
+  } 
+render(){
+  return(
+    <View style = {style.container}> 
+      <Text>
+        <BookDisplay
+        leapYear = {this.state.leapYear}
+        info = {this.state.info}
+        topics={['React Web','React Native','JavaScript']}//Array Object
+        />
+      </Text>    
+    </View>
+  )// end of return
+}//end of render
+}//end of class component
+
+//funtion component
+const BookDisplay = (props)=>{
+  let leapYear;
+  let {topics} = props;
+  let {info} = props;
+  topics = topics.map((topics,i)=>{
+    return <Text key={'a'+i}>{topics}</Text>
+  })
+  if(props.leapYear){
+    leapYear = <Text>This is a leapYear</Text>
+  }
+  return(
+    <View>
+      {leapYear}
+      <Text>Book type:{info.type}</Text>
+      {topics}
+    </View>
+  )
+}
+//end of BookDisplay Funtion
+const style = StyleSheet.create({
+  container:{
+    flex:1,
+    alignItems:'center',
+    justifyContent:'center'
+  },
+  text:{
+    fontSize:20,
+    color:'red'
+  }
+}) */
+
+import React, {Component} from 'react';
+import { View, Button, Text, SafeAreaView,StyleSheet,Alert } from 'react-native'
+export de
+
+
+export default App;
+
+//input condition class
