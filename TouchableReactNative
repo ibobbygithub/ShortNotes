@@ -10,12 +10,28 @@ export default class App extends Component {
     return (
       <View style={styles.container}>
         <TouchableNativeFeedback onPress = {this.onPress} background={TouchableNativeFeedback.SelectableBackground()}>
-
           <View style={styles.button}>
-            <Text> textInComponent </Text>
+            <Text> Touchable NativeFeedback </Text>
           </View>
-
         </TouchableNativeFeedback> 
+
+        <TouchableHighlight onPress = {this.onPress}>
+          <View style={styles.button}>
+            <Text> Touchable Highlight </Text>
+          </View>
+        </TouchableHighlight> 
+
+        <TouchableOpacity onPress = {this.onPress}>
+          <View style={styles.button}>
+            <Text> Touchable Opacity </Text>
+          </View>
+        </TouchableOpacity> 
+
+        <TouchableWithoutFeedback onPress = {this.onPress}>
+          <View style={styles.button}>
+            <Text> TouchableHighlight </Text>
+          </View>
+        </TouchableWithoutFeedback> 
       </View>
     )
   }
