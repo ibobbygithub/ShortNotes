@@ -1,0 +1,37 @@
+import React, { Component } from 'react'
+import { TouchableHighlight,Touchable,TouchableOpacity,TouchableWithoutFeedback,Text, StyleSheet, View, TouchableNativeFeedback } from 'react-native'
+
+export default class App extends Component {
+  onPress(){
+    //Do what you want
+  }
+
+  render() {
+    return (
+      <View style={styles.container}>
+        <TouchableNativeFeedback onPress = {this.onPress} background={TouchableNativeFeedback.SelectableBackground()}>
+
+          <View style={styles.button}>
+            <Text> textInComponent </Text>
+          </View>
+
+        </TouchableNativeFeedback> 
+      </View>
+    )
+  }
+}
+
+const styles = StyleSheet.create({
+  container:{
+    flex:1,
+    alignItems:'center',
+    marginTop:50
+  },
+  button:{
+    alignItems:'center',
+    backgroundColor:'#F8F8FF',
+    padding:10,
+    width:300,
+    marginTop:16
+  }
+})
