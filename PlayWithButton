@@ -1,0 +1,82 @@
+import React from 'react';
+import {Text, StyleSheet,Button,View,SafeAreaView, Alert, Image} from 'react-native';
+
+const Seperator = ()=>{
+  return(
+    <View style={styles.Seperator}/>
+  )
+}
+
+const App =() => {
+  return(
+    <SafeAreaView style={styles.container}>
+        <View>
+            <Text style={styles.title}>
+              The title and onPress handler are required. It is recommended to set accessibilityLabel to help make your app usable by everyone.
+            </Text>
+            <Button
+              title="Press me"
+              onPress = {()=>alert('Error 404 file not found')}
+            />
+        </View>
+        <Seperator/>
+        <View>
+            <Text style={styles.title}>
+            Adjust the color in a way that looks standard on each platform. On  iOS, the color prop controls the color of the text. On Android, the color adjusts the background color of the button.            </Text>
+            <Button
+              title="Press me"
+              color="#DC143C"
+              onPress = {()=>alert('Error 404 file not found')}
+            />
+        </View>
+        <View>
+            <Text style={styles.title}>
+            Adjust the color in a way that looks standard on each platform. On  iOS, the color prop controls the color of the text. On Android, the color adjusts the background color of the button.            </Text>
+            <Button
+              title="Press me"
+              disabled
+            />
+        </View>
+        <Seperator/>
+          <View style={styles.title}>
+            <Text>
+              This layout strategy lets the title define the width of the button.
+            </Text>
+          
+          <View style={styles.fixToText}>
+            <Button
+              title="Left Button"
+              onPress={()=>alert('Left button Error')}
+            />
+            <Button
+              title="Right Button"
+              onPress={()=>alert('Right button Error')}
+            />
+          </View>
+        </View>
+    </SafeAreaView>
+  )
+}
+
+const styles = StyleSheet.create({
+  container :{
+    flex:1,
+    marginHorizontal:16,
+    justifyContent:'center'
+  },
+  Seperator :{
+    marginVertical:8,
+    borderBottomColor: '#A52A2A',
+    justifyContent:'space-between',
+    borderBottomWidth:StyleSheet.hairlineWidth
+  },
+  title:{
+    textAlign:'center',
+    marginVertical:8
+  },
+  fixToText:{
+    flexDirection:'row',
+    justifyContent:'space-between'
+  }
+})
+export default App
