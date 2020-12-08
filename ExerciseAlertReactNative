@@ -1,0 +1,63 @@
+import React, {useState} from 'react';
+import {SafeAreaView, StyleSheet, View, Button, Image, TextInput} from 'react-native'
+
+const App = () => {
+  const [username,setUserName] = useState('');
+  const [userPass,setUserPass] = useState('');
+  
+  const forAlert = () =>{
+    alert('username: ' + username + ' password: ' + userPass)
+  }
+  
+  return (
+    <View style={styles.container}>
+      <TextInput 
+          placeholder='Enter Name'
+          underlineColorAndroid='transparent'
+          style={styles.TextInput}
+          onChangeText={username => setUserName(username)}
+        />
+        <TextInput 
+          placeholder='Enter Email'
+          underlineColorAndroid='transparent'
+          style={styles.TextInput}
+          onChangeText={userPass => setUserPass(userPass)}
+        />
+        <Button
+          title="Submit" onPress={forAlert}
+        />
+    </View>
+  );
+}
+
+
+const styles = StyleSheet.create({
+  container:{
+    flex:1,
+    justifyContent:'center',
+    alignItems:'center',
+    backgroundColor:'#FFF8DC',
+    margin:10
+  },
+  SectionStyle:{
+    flexDirection:'row',
+    justifyContent:'center',
+    alignItems:'center',
+    backgroundColor:'#E9967A',
+    borderWidth:0.5,
+    borderColor:'#8FBC8F',
+    height:40,
+    borderRadius:5,
+    margin:10
+  },
+  ImageStyle:{
+    padding:10,
+    margin:5,
+    height:25,
+    width:25,
+    resizeMode:'stretch',
+    alignItems:'center'
+  }
+})
+
+export default App;
