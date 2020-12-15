@@ -1,0 +1,43 @@
+import React, { useState } from 'react'
+import { Text, StyleSheet, View, Alert, Button,Modal,SafeAreaView } from 'react-native'
+
+const App = ()=>{
+  const [modal,setmodal]=useState(false);
+
+  return(
+    <SafeAreaView style={{flex:1}}>
+        <View style={styles.container}>
+            <Modal animationType={'slide'} transparent={false} visible={modal}>
+              <View style={styles.modal}>
+                <Text style={styles.text}>modal is open</Text>
+                <Button title='Click to close modal' onPress={()=>setmodal(!modal)}/>
+              </View>
+            </Modal>
+            <Button title='Click to open modal' onPress={()=>setmodal(!modal)}/>
+        </View>
+    </SafeAreaView>
+  )//end of return
+}//end of App
+
+const styles = StyleSheet.create({
+  container:{
+    flex:1,
+    justifyContent:'center',
+    alignItems:'center',
+    marginTop:30
+  },
+  modal:{
+    flex:1,
+    alignItems:'center',
+    backgroundColor:'#CD5C5C',
+    padding:100
+  },
+  text:{
+    color:'white',
+    marginTop:10,
+    fontSize:20,
+    padding:10
+  }
+})
+
+export default App;
