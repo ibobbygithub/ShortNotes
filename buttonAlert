@@ -1,0 +1,69 @@
+import React, { Component } from 'react'
+import { Text, StyleSheet, View, Alert, Button } from 'react-native'
+import symbolicateStackTrace from 'react-native/Libraries/Core/Devtools/symbolicateStackTrace'
+
+export default class App extends Component {
+showAlert1(){
+  Alert.alert(
+    'Alert Title',
+    'My Alert Msg',
+    [
+      {
+        text:'Cancle',
+        onPress: ()=> alert('Canceled'),
+        style:'cancel'
+      },
+      {
+        text:'OK',
+        onPress: ()=> alert('OK!'),
+      }
+    ]
+  )
+}//end of show alert1()
+showAlert2(){
+  Alert.alert(
+    'Alert Title',
+    'My Alert Msg',
+    [
+      {
+        text:'Ask me later',
+        onPress: ()=> alert('Ask me later'),
+        style:'cancel'
+      },
+      {
+        text:'Cancle',
+        onPress: ()=> alert('Canceled'),
+        style:'cancel'
+      },
+      {
+        text:'OK',
+        onPress: ()=> alert('OK!'),
+      }
+    ]
+  )
+}//end of show alert2()
+
+
+  render() {
+    return (
+      <View style={styles.container}>
+        <View style={styles.buttonContainer}>
+          <Button title='Button1' onPress={this.showAlert1}/>
+        </View>
+        <View style={styles.buttonContainer}>
+          <Button title='Button2' onPress={this.showAlert2} color="#DC143C"/>
+        </View>
+      </View>
+    )
+  }
+}
+
+const styles = StyleSheet.create({
+  container:{
+    flex:1,
+    justifyContent:'center'
+  },
+  buttonContainer:{
+    margin:20
+  }
+})
